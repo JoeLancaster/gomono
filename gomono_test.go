@@ -59,3 +59,35 @@ func BenchmarkTimeNow(b *testing.B) {
 		time.Now().UnixNano()
 	}
 }
+
+func BenchmarkTimeBefore(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		then := time.Now()
+		now := time.Now()
+		then.Before(now)
+	}
+}
+
+func BenchmarkBefore(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		then := Now()
+		now := Now()
+		then.Before(now)
+	}
+}
+
+func BenchmarkTimeAfter(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		then := time.Now()
+		now := time.Now()
+		then.After(now)
+	}
+}
+
+func BenchmarkAfter(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		then := Now()
+		now := Now()
+		then.After(now)
+	}
+}
