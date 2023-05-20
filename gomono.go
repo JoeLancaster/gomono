@@ -14,8 +14,6 @@ type Monotonic int64
 
 // Now gets the elapsed time according to clock_gettime(CLOCK_MONOTONIC)
 func Now() Monotonic {
-	j := time.Time{}
-	j.Before(time.Time)
 	return Monotonic(getMono())
 
 }
