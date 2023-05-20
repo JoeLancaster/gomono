@@ -27,5 +27,5 @@ TEXT ·getMono(SB),NOSPLIT,$16-8
 TEXT ·checkVdsoAvailable(SB),NOSPLIT,$0-1
 	MOVQ	runtime·vdsoClockgettimeSym(SB), AX
 	CMPQ	AX, $0 //if symbol is not set a.k.a zero value then we can't use it
-	MOVB	AX, available+0(FP)
+	MOVB	AX, ret+0(FP)
 	RET
